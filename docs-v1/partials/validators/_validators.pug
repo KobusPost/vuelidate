@@ -192,7 +192,7 @@ mixin validatorRow(validator, params)
       | behave well in presense of optional fields, that is the ones without <kbd>required</kbd> validator.
     pre(v-pre).language-javascript
       code.
-        import { helpers } from 'vuelidate/lib/validators'
+        import { helpers } from '@vuelidate/validators'
         const mustBeCool = (value) => !helpers.req(value) || value.indexOf('cool') >= 0
 
         // ...
@@ -209,7 +209,7 @@ mixin validatorRow(validator, params)
       | higher order function that returns the actual validator, like in <kbd>between</kbd> builtin validator.
     pre(v-pre).language-javascript
       code.
-        import { helpers } from 'vuelidate/lib/validators'
+        import { helpers } from '@vuelidate/validators'
         const contains = (param) =>
           (value) => !helpers.req(value) || value.indexOf(param) >= 0
 
@@ -229,7 +229,7 @@ mixin validatorRow(validator, params)
       | correct translation string later on.
     pre(v-pre).language-javascript
       code.
-        import { helpers } from 'vuelidate/lib/validators'
+        import { helpers } from '@vuelidate/validators'
         const mustBeCool = helpers.withParams(
           { type: 'mustBeCool' },
           (value) => !helpers.req(value) || value.indexOf('cool') >= 0
@@ -245,7 +245,7 @@ mixin validatorRow(validator, params)
       | wrap the <strong>inner</strong> function with <kbd>withParams</kbd> call, as follows.
     pre(v-pre).language-javascript
       code.
-        import { helpers } from 'vuelidate/lib/validators'
+        import { helpers } from '@vuelidate/validators'
         const contains = (param) =>
           helpers.withParams(
             { type: 'contains', value: param },
@@ -285,7 +285,7 @@ mixin validatorRow(validator, params)
       | This already includes handling optional fields and <kbd>$params</kbd>.
     pre(v-pre).language-javascript
       code.
-        import { helpers } from 'vuelidate/lib/validators'
+        import { helpers } from '@vuelidate/validators'
         const alpha = helpers.regex('alpha', /^[a-zA-Z]*$/)
 
   +subsection('locator based validator')
@@ -306,7 +306,7 @@ mixin validatorRow(validator, params)
       | You can import them from validators library
     pre(v-pre).language-javascript
       code.
-        import { helpers } from 'vuelidate/lib/validators'
+        import { helpers } from '@vuelidate/validators'
 
     .table__container
       table.table.table--full-size.table--fixed
